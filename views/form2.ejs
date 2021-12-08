@@ -330,10 +330,10 @@
                         <form class="form-group" method="post" action="/success-solo">
                             <input type="hidden" name="event" value="<%= title %>">
                             <label>Name:</label> 
-                            <input type="text" name="name" class="form-control" placeholder="enter name">
+                            <input type="text" name="name" class="form-control" placeholder="enter name" required>
                             <br>
                             <label>Register number:</label> 
-                            <input type="text" name="regno" class="form-control" placeholder="enter register number">
+                            <input type="text" name="regno" class="form-control" placeholder="enter register number" required>
                             <br>
                             <label for="dept">Department</label>
                             <select name="dept" class="form-control" required>
@@ -350,10 +350,10 @@
                             </select>
                             <br>
                             <label>E-mail:</label> 
-                            <input type="email" name="email" class="form-control" placeholder="enter email id">
+                            <input type="email" name="email" class="form-control" placeholder="enter email id" required>
                             <br>
                             <label>phone number:</label> 
-                            <input type="text" name="phone" class="form-control" placeholder="enter phone number">
+                            <input type="text" name="phone" class="form-control" placeholder="enter phone number" required>
                             <br>
 
                             <% if(title === "softwhere"){ %>
