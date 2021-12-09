@@ -62,6 +62,8 @@ const Softwhere = mongoose.model("Softwhere", SoloSchema);
 const Math = mongoose.model("Math", SoloSchema);
 const Photography = mongoose.model("Photography", SoloSchema);
 const UI = mongoose.model("UI", SoloSchema);
+const GD = mongoose.model("GD", SoloSchema);
+
 
 const EventSchema = new mongoose.Schema({
   name: String,
@@ -428,6 +430,18 @@ app.get("/events", function (req, res) {
     });
     design.save();
     event = "UI/UX Design";
+    }
+     else if(Etitle === "gd")
+    {
+    const group = new GD({
+    name: name,
+    reg: reg,
+    dept: dept,
+    phone: phone,
+    email: mail
+    });
+    group.save();
+    event = "Group Discussion";
     }
 
     var transporter = nodemailer.createTransport({
