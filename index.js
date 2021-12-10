@@ -36,7 +36,7 @@ const GroupSchema = new mongoose.Schema({
 
 const Gaming = mongoose.model("Gaming", GroupSchema);
 const Treasure = mongoose.model("Treasure", GroupSchema);
-const Reverse = mongoose.model("Reverse", GroupSchema);
+//const Reverse = mongoose.model("Reverse", GroupSchema);
 const Marvel = mongoose.model("Marvel", GroupSchema);
 const Auction = mongoose.model("Auction", GroupSchema);
 const Connections = mongoose.model("Connections", GroupSchema);
@@ -51,7 +51,7 @@ const SoloSchema = new mongoose.Schema({
     software: String
   });
 
-
+const Reverse = mongoose.model("Reverse", SoloSchema);
 const BigData = mongoose.model("BigData", SoloSchema);
 const Placement = mongoose.model("Placement", SoloSchema);
 const PairCoding = mongoose.model("PairCoding", SoloSchema);
@@ -236,7 +236,7 @@ app.get("/events", function (req, res) {
           con.save();
           event = "Connexions";
     }
-    else if(Etitle === "reversecoding")
+  /*  else if(Etitle === "reversecoding")
     {
         
     const revcode = new Reverse({
@@ -252,7 +252,7 @@ app.get("/events", function (req, res) {
           });
           revcode.save();
           event = "Reverse Coding";
-    }
+    } */
     else if(Etitle === "Legion")
     {
         
@@ -442,6 +442,19 @@ app.get("/events", function (req, res) {
     });
     group.save();
     event = "Group Discussion";
+    }
+    else if(Etitle === "reversecoding")
+    {
+        
+    const revcode = new Reverse({
+    name: name,
+    reg: reg,
+    dept: dept,
+    phone: phone,
+    email: mail
+          });
+          revcode.save();
+          event = "Reverse Coding";
     }
 
     var transporter = nodemailer.createTransport({
