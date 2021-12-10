@@ -199,7 +199,7 @@ app.get("/events", function (req, res) {
     phone: phone,
     email: mail
           });
-          mar.save();
+          marv.save();
           event = "Marvel Quiz";
     }
     else if(Etitle === "IPLAuction")
