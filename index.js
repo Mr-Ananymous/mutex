@@ -41,6 +41,8 @@ const Marvel = mongoose.model("Marvel", GroupSchema);
 const Auction = mongoose.model("Auction", GroupSchema);
 const Connections = mongoose.model("Connections", GroupSchema);
 const Legion = mongoose.model("Legion", GroupSchema);
+const StreetCoding = mongoose.model("StreetCoding", GroupSchema);
+
 
 const SoloSchema = new mongoose.Schema({
     name: String,
@@ -269,6 +271,23 @@ app.get("/events", function (req, res) {
           });
           leg.save();
           event = "Legion";
+    }
+     else if(Etitle === "streetcoding")
+    {
+        
+    const street = new StreetCoding({
+    leaderName: leaderName,
+    leaderReg: leaderReg,
+    name1: member1,
+    regno1: reg2,
+    name2: member2,
+    regno2: reg2,
+    dept: dept,
+    phone: phone,
+    email: mail
+          });
+          street.save();
+          event = "Street Coding";
     }
 
     var transporter = nodemailer.createTransport({
